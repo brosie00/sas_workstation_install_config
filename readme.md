@@ -85,9 +85,9 @@ scmd
 ```
 # Common Installation Issues
 
-If any installation problems are encountered, then the entire C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be submitted to the CDWHelpDesk.
+If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be submitted to the CDWHelpDesk.
 
-- Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid. MODIFY the ResponseFile to point the correct license file. 
+- Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of a sid file with a sid file that is appropriate file. 
 
 - Windows 11
 
