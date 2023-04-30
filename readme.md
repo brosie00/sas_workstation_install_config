@@ -94,3 +94,5 @@ Volume serial number is EE93-C8BA
 8. Launch the SAS® Deployment Manager, remembering any specific pre- or post-installation steps indicated by [D] in the SAS_Hot_Fix_Analysis_Report_ (step 6). 
     a. Click Apply Hot Fixes.
     b. When prompted, point the SAS® Deployment Manager to the DEPLOY_ folder containing the hot fixes that you downloaded in step 7.
+
+    Common Installation Issues
