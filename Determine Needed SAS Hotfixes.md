@@ -1,16 +1,33 @@
 # Overview
-- Inventory of installed SAS elements
+- Inventory the SAS Installation
 - Export the inventory to a non-IRS workstation with direct Internet access
 - Use a sas tool to process the inventory and automate the list of needed hotfixes
+- Use a script to download the hotfixes
+- Move the hotfixes to an IRS workstation
+- Install hotfixes
 - 
 # SASHFADD Quick Start Guide for Windows
 Complete these steps to use SASHFADD in Windows environments:
 
 # IRS Machine
 
-1. From an IRS windows machine,  Generate a DeploymentRegistry.txt, DeploymentRegistry.html  file for your SAS deployment as described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
+1. From an IRS windows machine,  Generate a DeploymentRegistry.txt and a DeploymentRegistry.html file for your SAS deployment as described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
 ```
-    java -jar java -jar "C:\Program Files\SASHome\deploymntreg\sas.tools. viewregistry.jar"
+    java -jar "C:\Program Files\SASHome\deploymntreg\sas.tools.viewregistry.jar"
+
+    Directory: C:\Program Files\SASHome\deploymntreg
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    -a---           4/30/2023  3:19 PM          66585 DeploymentRegistry.html
+**  -a---           4/30/2023  3:19 PM          34493 DeploymentRegistry.txt**
+    -a---           4/29/2023  4:25 PM         347111 registry.jnl
+    -a---           4/29/2023  4:14 PM              0 registry.lck
+    -a---           4/29/2023  4:14 PM             49 registry.properties
+    -a---           4/29/2023  4:25 PM         252578 registry.xml
+    -a---           1/19/2023  3:54 AM          27033 sas.tools.deploymntreg.jar
+    -a---           1/19/2023  3:54 AM           9214 sas.tools.viewregistry.jar
+
 ```
 # Non-IRS Machine 
 
