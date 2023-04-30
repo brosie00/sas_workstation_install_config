@@ -9,6 +9,7 @@ Robocopy.exe "\\WORK\users\Work\Desktop\sas_software_depot" C:\sas_software_depo
 
 - [REMOVE OLD SAS CLIENT](#remove-old-sas-client)
 - [INSTALLATION](#installation)
+- [Common Installation Issues](#common-installation-issues)
 
 
 
@@ -95,4 +96,4 @@ Volume serial number is EE93-C8BA
     a. Click Apply Hot Fixes.
     b. When prompted, point the SAS® Deployment Manager to the DEPLOY_ folder containing the hot fixes that you downloaded in step 7.
 
-    Common Installation Issues
+# Common Installation Issues
