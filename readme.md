@@ -11,16 +11,18 @@ How users can get started with the project
 Where users can get help with your project
 Who maintains and contributes to the project
 
-Any code used to deploy the client is PowerShell v5.1.
+Any code used to deploy the client is PowerShell v5.1.  Since we are working with files in "c:\Program Files", PowerShell should be started with Admin privileges. 
 
-[PowerShell Installation ](images/PowerShell.png)
+
+![PowerShell Illustration ](images/PowerShell.png?raw=true)
+
 
 # Remove Old SAS Client Install
 
-User settings are stored in a *user's* profile and will not be destroyed by either uninstallation or installation. However, these files can be backed up before installation and periodically. 
+User settings are stored in a *user's* profile and will not be destroyed by either uninstallation or installation. However, these files can be copied somewhere safe before installation and periodically. 
 
 ```
-c:\users\<<SEID>>\appdata\*\SAS
+c:\users\<<SEID>>\AppData\*\SAS
 ```
 
 Because we are using automation to deploy the new entire SAS client (9.4M8), not upgrading all of the pieces, we need to delete any installed pieces from the client workstation.
