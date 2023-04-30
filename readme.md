@@ -1,14 +1,21 @@
 
-
+# TABLE of CONTENTS
+- [TABLE of CONTENTS](#table-of-contents)
 - [Remove Old SAS Client Install](#remove-old-sas-client-install)
 - [Installation](#installation)
 - [Common Installation Issues](#common-installation-issues)
 
+What the project does
+Why the project is useful
+How users can get started with the project
+Where users can get help with your project
+Who maintains and contributes to the project
 
 Any code used to deploy the client is PowerShell v5.1.
 
-# Remove Old SAS Client Install
+[PowerShell Installation ](images/PowerShell.png)
 
+# Remove Old SAS Client Install
 
 User settings are stored in a *user's* profile and will not be destroyed by either uninstallation or installation. However, these files can be backed up before installation and periodically. 
 
