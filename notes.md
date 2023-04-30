@@ -7,6 +7,10 @@ backup settings files
 
 Robocopy.exe "\\WORK\users\Work\Desktop\sas_software_depot" C:\sas_software_depot  /E /mt:16
 
+------
+REMOVE OLD SAS CLIENT
+
+------
 Stop-Service -Name 'SAS PC Files Server'  
 
 Remove-Item -Recurse -Force -Path C:\Users\*\AppData\*\SAS\SASDeploymentWizard
