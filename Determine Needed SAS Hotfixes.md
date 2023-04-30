@@ -1,16 +1,20 @@
-Determine Needed SAS Hotfixes
-
+# Overview
+- Inventory of installed SAS elements
+- Export the inventory to a non-IRS workstation with direct Internet access
+- Use a sas tool to process the inventory and automate the list of needed hotfixes
+- 
 # SASHFADD Quick Start Guide for Windows
 Complete these steps to use SASHFADD in Windows environments:
 
 # IRS Machine
 
 1. From an IRS windows machine,  Generate a DeploymentRegistry.txt, DeploymentRegistry.html  file for your SAS deployment as described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
-    * java -jar C:\Program Files\SASHome\deploymntreg\sas.tools.viewregistry.jar
-
+```
+    java -jar java -jar "C:\Program Files\SASHome\deploymntreg\sas.tools. viewregistry.jar"
+```
 # Non-IRS Machine 
 
-1. Download the SASHFADDwn.exe file to a system with Internet Access. https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/tool/SASHFADDwn.exe
+1. Download the SASHFADDwn.exe from the SAS Website file to a machine with Internet Access. https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/tool/SASHFADDwn.exe
 2. Launch the SASHFADDwn.exe installer and install SASHFADD in the C:\Program Files\SAS\SASHFADD directory. This file is the default and is different than C:\Program Files\SASHome. 
 
 4. Copy the generated DeploymentRegistry.txt to the same directory as the SASHFADD.exe file.
