@@ -3,9 +3,6 @@ Determine Needed SAS Hotfixes
 # SASHFADD Quick Start Guide for Windows
 Complete these steps to use SASHFADD in Windows environments:
 
-# Non-IRS machine
-
-
 # IRS Machine
 
 1. From an IRS windows machine,  Generate a DeploymentRegistry.txt, DeploymentRegistry.html  file for your SAS deployment as described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
