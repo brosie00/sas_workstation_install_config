@@ -7,25 +7,35 @@ backup settings files
 
 Robocopy.exe "\\WORK\users\Work\Desktop\sas_software_depot" C:\sas_software_depot  /E /mt:16
 
-- [REMOVE OLD SAS CLIENT](#remove-old-sas-client)
-- [INSTALLATION](#installation)
-- [Common Installation Issues](#common-installation-issues)
+- [Remove Old SAS Client Install](#remove-old-sas-client-install)
+- [Installation](#installation)
+- [COMMON INSTALLATION ISSUES](#common-installation-issues)
 
 
 
-# REMOVE OLD SAS CLIENT
+# Remove Old SAS Client Install
+Because we are using automation to deploy the new entire SAS client (9.4M8), not upgrading all of the pieces, we need to delete any installed pieces from the client workstation.
 
+User settings are stored in a user's profile
+
+Previously, installers with admin privileges, could install a feature named SAS PC Files Server as a server.  This wasn't a part of the standard install and won't be part of the install in the future.  However, the service's presence will prevent the 
+
+```
 Stop-Service -Name 'SAS PC Files Server'  
 
+```
+Any future install will look to the *installer's* profile for a record of the previous installation. The installation logs and records are stored in a folder named SASDeploymentWizard. Therefore, we will destroy any SASDeploymentWizard folders we can find.
+
+```
 Remove-Item -Recurse -Force -Path C:\Users\*\AppData\*\SAS\SASDeploymentWizard
 
 reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f 
 
 Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
+```
 
 
-
-# INSTALLATION
+# Installation
 
 Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  If this 
 
@@ -96,4 +106,4 @@ Volume serial number is EE93-C8BA
     a. Click Apply Hot Fixes.
     b. When prompted, point the SAS® Deployment Manager to the DEPLOY_ folder containing the hot fixes that you downloaded in step 7.
 
-# Common Installation Issues
+# COMMON INSTALLATION ISSUES
