@@ -1,7 +1,8 @@
 
-# TABLE of CONTENTS
-- [TABLE of CONTENTS](#table-of-contents)
+# Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
+- [Use of this Document and Git Repo](#use-of-this-document-and-git-repo)
 - [Remove Old SAS Client Install](#remove-old-sas-client-install)
 - [Installation](#installation)
 - [Common Installation Issues](#common-installation-issues)
@@ -24,6 +25,10 @@ User settings are stored in a *user's* profile and will not be destroyed by eith
 c:\users\<<SEID>>\AppData\*\SAS
 ```
 
+# Use of this Document and Git Repo
+
+The targeted response files is the only 
+
 # Remove Old SAS Client Install
 
 Because we are using automation to deploy the new entire SAS client (9.4M8), not upgrading all of the pieces, we need to delete any installed pieces from the client workstation.
@@ -34,10 +39,10 @@ Previously, installers with admin privileges could install a feature named SAS P
 Stop-Service -Name 'SAS PC Files Server'  
 ```
 
-Any future install will look to the *installer's* Windows profile for a record of the previous installation. The installation logs and records are stored in a folder named SASDeploymentWizard. Therefore, we will destroy any SASDeploymentWizard folders we can find.
+Any future install will look to the *installer's* Windows profile for a record of the previous installation. The installation logs and records are stored in a folder named SASDeploymentWizard. Therefore, we will destroy any SASDeploymentWizard folders we can find.  During installation, monitor this directory.
 
 ```
-Remove-Item -Recurse -Force -Path C:\Users\*\AppData\*\SAS\SASDeploymentWizard
+Remove-Item -Recurse -Force -Path C:\Users\*\AppData\Local\SAS\SASDeploymentWizard
 
 reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f 
 
@@ -50,14 +55,19 @@ Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a licens
 
 ![Example of a SAS Installation File](images/SASInstallationFile.png)
 
-This entry should be stored in each 
+$ENV:OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt
 
 ```
-The responsefiles to be used for installation are found in theis 
+The responsefiles to be used for installation can be found in several features.
 
-# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Basic-EG32.txt
- $ResponseFile = "C:\Users\Brett\Desktop\ResponseFile-Basic-EG64.txt" 
+- ResponseFile-Basic-EG64.txt
+- ResponseFile-Extended-EG64.txt
 
+# $ResponseFile = ..\ResponseFiles\ResponseFile-Basic-EG64.txt
+
+ $ResponseFile = ..\ResponseFiles\ResponseFile-Basic-EG64.txt
+
+\ResponseFiles\ResponseFile-Basic-EG64.txt
 
 '# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG32.txt
 '# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG64.txt
@@ -75,9 +85,9 @@ scmd
 ```
 # Common Installation Issues
 
-If any installations are encountered
+If any installation problems are encountered, then the entire C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be submitted to the CDWHelpDesk.
 
-- SAS reports that the response file is invalid. 
+- Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid. MODIFY the ResponseFile to point the correct license file. 
 
 - Windows 11
 
