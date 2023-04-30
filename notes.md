@@ -19,16 +19,18 @@ Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 
 -----------------------
 INSTALLATION
+
 -----------------------
 
 Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  If this 
 
-
+```
 # $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Basic-EG32.txt
- $ResponseFile = "C:\Users\Brett\Desktop\ResponseFile-Basic-EG64.txt"
+ $ResponseFile = "C:\Users\Brett\Desktop\ResponseFile-Basic-EG64.txt" 
 
-# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG32.txt
-# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG64.txt
+
+'# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG32.txt
+'# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG64.txt
 
 C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile
 
@@ -40,7 +42,7 @@ Start-Process -filepath "C:\Users\swwcb\Desktop\sas_software_depot\setup.exe" -A
  msiexec.exe /i "F:\sas_software_depot\products\eguide__94200__wx6__en__sp0__1\eguide.msi" /qn /norestart DIR_APPFILES="C:\Program Files\SASHome\SASEnterpriseGuide\8" REG_FILETYPES="0" ARPSYSTEMCOMPONENT=1 REINSTALLMODE=amus /LV*X "F:\sas_software_depot\enterprise_guide_log.txt"
 scmd
 
-
+```
 SASHFADD Quick Start Guide for Windows
 Complete these steps to use SASHFADD in Windows environments:
 1. Download the SASHFADDwn.exe file. https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/tool/SASHFADDwn.exe
