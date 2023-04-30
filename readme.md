@@ -4,6 +4,7 @@
 - [Introduction](#introduction)
 - [Remove Old SAS Client Install](#remove-old-sas-client-install)
 - [Installation](#installation)
+- [Common Installation Issues](#common-installation-issues)
 
 What the project does
 Why the project is useful
@@ -44,7 +45,7 @@ Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 ```
 # Installation
 
-Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  The license files are stored at the root of /sas_software_depot/sid_files
+Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  The license files are stored at the root of \sas_software_depot\sid_files
 
 
 ![Example of a SAS Installation File](images/SASInstallationFile.png)
@@ -52,6 +53,8 @@ Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a licens
 This entry should be stored in each 
 
 ```
+The responsefiles to be used for installation are found in theis 
+
 # $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Basic-EG32.txt
  $ResponseFile = "C:\Users\Brett\Desktop\ResponseFile-Basic-EG64.txt" 
 
@@ -70,3 +73,12 @@ Start-Process -filepath "C:\Users\swwcb\Desktop\sas_software_depot\setup.exe" -A
 scmd
 
 ```
+# Common Installation Issues
+
+If any installations are encountered
+
+- SAS reports that the response file is invalid. 
+
+- Windows 11
+
+- 

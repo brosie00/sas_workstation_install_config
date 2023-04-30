@@ -19,7 +19,10 @@ Complete these steps to use SASHFADD in Windows environments:
 4. Copy the generated DeploymentRegistry.txt to the same directory as the SASHFADD.exe file.
     copy-item "C:\Program Files\SASHome\deploymntreg\DeploymentRegistry.txt" "C:\Program Files\SAS\SASHFADD"
 
-5. Double-click the SASHFADD.exe file, follow the on-screen instructions, and create three folders. One log directory, one location for downloaded hotfixes, one generated powershell .
+5. Either, Double-click the SASHFADD.exe file, follow the on-screen instructions, and create three folders. One log directory, one location for downloaded hotfixes, one generated powershell .  
+
+SASHFADD can also be launched via a powershell command line.
+
         PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe
 ```
         PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe 
@@ -36,7 +39,7 @@ Complete these steps to use SASHFADD in Windows environments:
             -> 2023_May_Basic_EG64_2023_4_28_16.15.19
 ```
 
-6. After SASHFADD finishes running, review the generated SAS_Hot_Fix_Analysis_Report_.
+1. After SASHFADD finishes running, review the generated SAS_Hot_Fix_Analysis_Report_.
 • Take note of any hot fixes in the SAS_Hot_Fix_Analysis_Report_ indicated by [D] because these fixes require additional pre- or post-installation steps that must be completed during step 8.
 
     PS C:\Program Files\SAS\SASHFADD\SASHFADD_2023_4_28_16.04.40> tree
@@ -52,9 +55,9 @@ Volume serial number is EE93-C8BA
         Installed_Hot_Fixes_SASHFADD_2023_4_28_16.04.40.xml
         SASHFADD_LOG_2023_4_28_16.04.40.txt
 
-7. Double-click the powershell_script.bat file in the DOWNLOAD_ folder, which downloads all eligible hot fixes to the DEPLOY_ folder.
-8. Launch the SAS® Deployment Manager, remembering any specific pre- or post-installation steps indicated by [D] in the SAS_Hot_Fix_Analysis_Report_ (step 6). 
+1. Double-click the powershell_script.bat file in the DOWNLOAD_ folder, which downloads all eligible hot fixes to the DEPLOY_ folder.
+2. Launch the SAS® Deployment Manager, remembering any specific pre- or post-installation steps indicated by [D] in the SAS_Hot_Fix_Analysis_Report_ (step 6). 
     a. Click Apply Hot Fixes.
     b. When prompted, point the SAS® Deployment Manager to the DEPLOY_ folder containing the hot fixes that you downloaded in step 7.
 
-# Common Installation Issues
+
