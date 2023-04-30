@@ -24,10 +24,7 @@ Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 
 
 
------------------------
 # INSTALLATION
-
------------------------
 
 Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  If this 
 
