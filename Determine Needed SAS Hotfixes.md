@@ -20,20 +20,20 @@ Complete these steps to use SASHFADD in Windows environments:
     copy-item "C:\Program Files\SASHome\deploymntreg\DeploymentRegistry.txt" "C:\Program Files\SAS\SASHFADD"
 
 5. Double-click the SASHFADD.exe file, follow the on-screen instructions, and create three folders. One log directory, one location for downloaded hotfixes, one generated powershell .
-                    PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe
+        PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe
 ```
-                    PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe 
-                    ** SAS Hot Fix Analysis, Download and Deployment Tool Ver. 2.2.4 **
+        PS C:\Program Files\SAS\SASHFADD> .\SASHFADD.exe 
+        ** SAS Hot Fix Analysis, Download and Deployment Tool Ver. 2.2.4 **
 
-                    Enter a descriptive name of the machine that contains the SAS deployment
-                    or press "Enter" to accept a default name: 2023_May_Basic_EG64 
+        Enter a descriptive name of the machine that contains the SAS deployment
+        or press "Enter" to accept a default name: 2023_May_Basic_EG64 
 
-                    C:\Program Files\SAS\SASHFADD>powershell -Command "$ProgressPreference = 'SilentlyContinue';Invoke-WebRequest https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/data/SAS94_HFADD_data.xml -OutFile SAS94_HFADD_data.xml"
+        C:\Program Files\SAS\SASHFADD>powershell -Command "$ProgressPreference = 'SilentlyContinue';Invoke-WebRequest https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/data/SAS94_HFADD_data.xml -OutFile SAS94_HFADD_data.xml"
 
-                    SASHFADD processing complete!
+        SASHFADD processing complete!
 
-                    SASHFADD output written to directory:
-                    -> 2023_May_Basic_EG64_2023_4_28_16.15.19
+        SASHFADD output written to directory:
+            -> 2023_May_Basic_EG64_2023_4_28_16.15.19
 ```
 
 6. After SASHFADD finishes running, review the generated SAS_Hot_Fix_Analysis_Report_.
