@@ -24,6 +24,8 @@ INSTALLATION
 Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  If this 
 
 
+
+
 # $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Basic-EG32.txt
  $ResponseFile = "C:\Users\Brett\Desktop\ResponseFile-Basic-EG64.txt"
 
