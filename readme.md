@@ -57,31 +57,26 @@ Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a licens
 
 $ENV:OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt
 
-```
-The responsefiles to be used for installation can be found in several features.
 
+The setup command will require a full path to a responsefile.  We will choose among two: 
+```
 - ResponseFile-Basic-EG64.txt
 - ResponseFile-Extended-EG64.txt
 
-# $ResponseFile = ..\ResponseFiles\ResponseFile-Basic-EG64.txt
+"C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+"C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
 
- $ResponseFile = ..\ResponseFiles\ResponseFile-Basic-EG64.txt
+'# $ResponseFile = "C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+'# $ResponseFile = "C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+```
+The command can either be installed with the user dialogs or without (quiet).
+```
+C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile # -quiet
 
-\ResponseFiles\ResponseFile-Basic-EG64.txt
-
-'# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG32.txt
-'# $ResponseFile = C:\Users\Brett\Desktop\ResponseFile-Extended-EG64.txt
-
-C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile
-
+```
 Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE $ResponseFile'
-
-
-Start-Process -filepath "C:\Users\swwcb\Desktop\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE C:\Users\BRETT\Desktop\ResponseFile-Extended-EG64.txt'
-
+```
  msiexec.exe /i "F:\sas_software_depot\products\eguide__94200__wx6__en__sp0__1\eguide.msi" /qn /norestart DIR_APPFILES="C:\Program Files\SASHome\SASEnterpriseGuide\8" REG_FILETYPES="0" ARPSYSTEMCOMPONENT=1 REINSTALLMODE=amus /LV*X "F:\sas_software_depot\enterprise_guide_log.txt"
-scmd
-
 ```
 # Common Installation Issues
 
