@@ -93,24 +93,6 @@ C:.
             SASHFADD_LOG_2023_4_30_17.16.31.txt
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```
 
 1. Double-click the powershell_script_ALERT_ONLY.bat file in the DOWNLOAD_* folder, which downloads all eligible hot fixes to the DEPLOY_ folder.
