@@ -1,0 +1,30 @@
+# Response file for resuming the SAS Deployment Wizard
+# Created: May 8, 2023 9:07:22 PM
+
+# Select Deployment Task
+# Select the deployment task you would like to perform.
+#START_TASK=install/depot/manage
+ START_TASK=install
+
+# Select Deployment Type
+# Select the type of deployment you want to perform.
+#DEPLOYMENT_TYPE=planned/nonplanned/additional
+ DEPLOYMENT_TYPE=additional
+#PLANNED_INSTALL=yes/no
+ PLANNED_INSTALL=yes
+#PLANNED_CONFIGURE=yes/no
+ PLANNED_CONFIGURE=yes
+
+# Select Products to Install
+# Select the products you want to install on this machine.
+ PRODUCT_SELECTION1=dmineclient
+
+# Specify SAS Installation Data File
+# Specify the full path to your SAS installation data file.
+#SAS_INSTALLATION_DATA=<full path to file>
+ SAS_INSTALLATION_DATA=C:\sas_software_depot\sid_files\SAS94_9CTQ6M_70021526_Win_Wrkstn.txt
+
+# SAS Environments URL
+# Specify the URL for the file that defines the SAS Environments.
+#sas.environments.url=<text value>
+ sas.environments.url=
