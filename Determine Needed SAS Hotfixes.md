@@ -1,3 +1,6 @@
+# Introduction  
+SAS releases hotfixes to address security needs.  Unlike Windows or Microsoft Office, there is no monolithic installer or updater. Since each install might be completely different, SAS requires an inventory of the existing installation and then compares that inventory to a list of available hotfixes.
+
 # Overview 
 - Inventory the SAS Installation
 - Export the inventory to a non-IRS workstation with direct Internet access
@@ -11,7 +14,7 @@ Complete these steps to use SASHFADD in Windows environments:
 
 # IRS Machine
 
-1. From an IRS windows machine,  Generate a DeploymentRegistry.txt and a DeploymentRegistry.html file for your SAS deployment as described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
+1. From an IRS windows machine with an existing SAS installation, generate a DeploymentRegistry.txt and a DeploymentRegistry.html file.  The full method is described in SAS Note 35968.  The default output will report only the current release of product components which are installed in the IRS windows machine's current SASHOME.
 ```
     java -jar "C:\Program Files\SASHome\deploymntreg\sas.tools.viewregistry.jar"
 

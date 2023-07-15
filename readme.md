@@ -91,13 +91,6 @@ C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile # -quiet
 
 ```
 Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE $ResponseFile'
-```
- msiexec.exe /i "F:\sas_software_depot\products\eguide__94200__wx6__en__sp0__1\eguide.msi" /qn /norestart DIR_APPFILES="C:\Program Files\SASHome\SASEnterpriseGuide\8" REG_FILETYPES="0" ARPSYSTEMCOMPONENT=1 REINSTALLMODE=amus /LV*X "F:\sas_software_depot\enterprise_guide_log.txt"
-```
-
-
-
-
 
 # Common Installation Issues
 
@@ -106,3 +99,5 @@ If any installation problems are encountered, then the deployment history is loc
 * Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt
 
 * Starting the install by doubleclicking on the Start.exe file will launch the Install Dialogs, but decisions will need to be made at each step.
+
+* SAS provides a utility to check the validity of an installation, which can be found C:\Program Files\SASHome\InstallMisc\utilities\installqual\9.4\sasiqt_console.exe
