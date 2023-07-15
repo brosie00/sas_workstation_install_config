@@ -48,26 +48,42 @@ reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f
 
 Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 ```
-# Installation
 
-Troubleshooting: the ResponseFile REQUIRES an entry with a full path to a license file.  The license files are stored at the root of \sas_software_depot\sid_files
+
+# Installation
+Troubleshooting:  You can use a reponsefile to automate the install process and standardize the installation.  ResponseFile REQUIRES an entry with a full path to a license file.  The license files are stored at the root of \sas_software_depot\sid_files, and they will be called 
+
+Three locations need to be declared when runnning the script: 
+  1. The full path to the Software Depot's Root. The root contains setup.exe 
+
+    During development, we saved the sas_software_depot to the users desktop:
+    "C:\Users\<seid>\Desktop\sas_software_depot"
+  
+  2. The location of the response files that are included in this repository or saved elsewhere:
+  
+    "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
+    or  
+    "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"  
+     
+  
+  3. The full path to the license file (by default, within the SAS Depot's sid_file directory).  The responsefile found in Step 2, should be modified to include the path to SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt.  
+
+
+
 
 
 ![Example of a SAS Installation File](images/SASInstallationFile.png)
-
-$ENV:OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt
-
 
 The setup command will require a full path to a responsefile.  We will choose among two: 
 ```
 - ResponseFile-Basic-EG64.txt
 - ResponseFile-Extended-EG64.txt
 
-"C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-"C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+"C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+"C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
 
-'# $ResponseFile = "C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-'# $ResponseFile = "C:\Users\Brett\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+'# $ResponseFile = "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+'# $ResponseFile = "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
 ```
 The command can either be installed with the user dialogs or without (quiet).
 ```
@@ -78,9 +94,14 @@ Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPON
 ```
  msiexec.exe /i "F:\sas_software_depot\products\eguide__94200__wx6__en__sp0__1\eguide.msi" /qn /norestart DIR_APPFILES="C:\Program Files\SASHome\SASEnterpriseGuide\8" REG_FILETYPES="0" ARPSYSTEMCOMPONENT=1 REINSTALLMODE=amus /LV*X "F:\sas_software_depot\enterprise_guide_log.txt"
 ```
+
+
+
+
+
 # Common Installation Issues
 
-If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be submitted to the CDWHelpDesk.
+If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be zipped and submitted to the CDWHelpDesk.
 
 - Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of a sid file with a sid file that is appropriate file. 
 
