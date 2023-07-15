@@ -58,22 +58,19 @@ Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 Troubleshooting:  You can use a reponsefile to automate the install process and standardize the installation.  ResponseFile REQUIRES an entry with a full path to a license file.  The license files are stored at the root of \sas_software_depot\sid_files, and they will be called 
 
 Three locations need to be declared when runnning the script: 
-  1. The full path to the Software Depot's Root. The root contains setup.exe 
+  First - The full path to the Software Depot's Root. The root contains setup.exe 
 
     During development, we saved the sas_software_depot to the users desktop:
     "C:\Users\<seid>\Desktop\sas_software_depot"
   
-  2. The location of the response files that are included in this repository or saved elsewhere:
+  Second - The location of the response files that are included in this repository or saved elsewhere:
   
-    "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
+    "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
     or  
-    "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"  
+    "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"  
      
   
-  3. The full path to the license file (by default, within the SAS Depot's sid_file directory).  The responsefile found in Step 2, should be modified to include the path to SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt.  
-
-
-
+   Third - The full path to the license file (by default, within the SAS Depot's sid_file directory).  The responsefile found in Step 2, should be modified to include the path to SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt.  
 
 
 ![Example of a SAS Installation File](images/SASInstallationFile.png)
@@ -83,11 +80,11 @@ The setup command will require a full path to a responsefile.  We will choose am
 - ResponseFile-Basic-EG64.txt
 - ResponseFile-Extended-EG64.txt
 
-"C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-"C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+"C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+"C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
 
-'# $ResponseFile = "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-'# $ResponseFile = "C:\Users\<seid>\OneDrive\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+'# $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
+'# $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
 ```
 The command can either be installed with the user dialogs or without (quiet).
 ```
