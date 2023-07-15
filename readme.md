@@ -80,15 +80,14 @@ The setup command will require a full path to a responsefile.  We will choose am
 - ResponseFile-Basic-EG64.txt
 - ResponseFile-Extended-EG64.txt
 
-"C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-"C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
+```
+The command can either be installed with the user dialogs or without (quiet).  From a PowerShell prompt, start setup.exe and use the RESPONSEFILE switch ( capitilization is unneccesary) 
+```
+$ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
+- or -  
+$ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"  
 
-'# $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"
-'# $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"
-```
-The command can either be installed with the user dialogs or without (quiet).
-```
-C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile # -quiet
+C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile # -quiet  
 
 ```
 Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE $ResponseFile'
