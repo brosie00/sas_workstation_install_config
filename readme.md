@@ -15,7 +15,11 @@ Who maintains and contributes to the project
 
 # Introduction
 
-Any code used to deploy the client is PowerShell v5.1.  Since we are working with files in "c:\Program Files", PowerShell should be started with Admin privileges. 
+SAS will be deployed by UNS using the Altiris installer. Basically, we download the entire SAS Depot of installation software, and then run the installer paired with a data file called a responsefile.  We will also change the specific responsefile to including a path to a license file.
+
+The start.exe file can be called using either 
+
+ Since we are working with files in "c:\Program Files", PowerShell should be started with Admin privileges. 
 
 ![PowerShell Illustration ](images/PowerShell.png?raw=true)
 
@@ -103,8 +107,6 @@ Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPON
 
 If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be zipped and submitted to the CDWHelpDesk.
 
-- Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of a sid file with a sid file that is appropriate file. 
+* Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt
 
-- Windows 11
-
-- 
+* Starting the install by doubleclicking on the Start.exe file will launch the Install Dialogs, but decisions will need to be made at each step.
