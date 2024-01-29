@@ -45,11 +45,13 @@ Stop-Service -Name 'SAS PC Files Server'
 Any future install will look to the *installer's* Windows profile for a record of the previous installation. The installation logs and records are stored in a folder named SASDeploymentWizard. Therefore, we will destroy any SASDeploymentWizard folders we can find.  During installation, monitor this directory.
 
 ```
-Remove-Item -Recurse -Force -Path C:\Users\*\AppData\Local\SAS\SASDeploymentWizard
-
-reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f 
-
+Stop-Service -Name 'SAS PC Files Server'  
+Remove-Item -Recurse -Force -Path C:\Users\*\AppData\*\SAS\SASDeploymentWizard
 Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
+Get-Item 'HKLM:\SOFTWARE\SAS Institute Inc.\'  | Remove-Item -Recurse
+Get-Item 'HKLM:\SOFTWARE\WOW6432Node\SAS Institute Inc.' | Remove-Item -Recurse
+
+reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f
 ```
 
 
