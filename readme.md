@@ -103,6 +103,8 @@ Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPON
 
 * The install decisions will be recorded in a dated "ResponseRecord*". Compare that ResponseRecord to a ResponseFile and look for deviations. In this example, the user selected options ( shown in RED) in the dialog boxes during setup that did not belong on a workstation. SAS would not complete the post processing. 
 
+* [The official SAS documentation is here.](https://support.sas.com/documentation/installcenter/en/ikdeploywizug/66034/PDF/default/user.pdf)
+
 ![Comparison of ResponsRecord and ResponseFile-Extended-EG64.txt" ](images/responsedeviations.png)
 
 
