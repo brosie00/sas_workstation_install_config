@@ -1,4 +1,3 @@
-
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
@@ -81,23 +80,27 @@ The setup command will require a full path to a responsefile.  We will choose am
 - ResponseFile-Extended-EG64.txt
 
 ```
-The command can either be installed with the user dialogs or without (quiet).  From a PowerShell prompt, start setup.exe and use the RESPONSEFILE switch ( capitilization is unneccesary) 
+The command can either be installed with the user dialogs or without (quiet). The *INSTALLER SHOULD NOT* change the dialog boxes as they are presented during the Install. All decisions have already been written into the responsefile. From a PowerShell prompt, start setup.exe and use the RESPONSEFILE switch ( capitilization is unneccesary) 
 ```
 $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
 - or -  
 $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt"  
 
-C:\sas_software_depot\setup.exe -RESPONSEFILE $ResponseFile # -quiet  
+C:\sas_software_depot\setup.exe -RESPONSEFILE  "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
 
 ```
 Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE $ResponseFile'
 
 # Common Installation Issues
 
-If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be zipped and submitted to the CDWHelpDesk.
+* SAS provides a utility to check the validity of an installation, which can be found C:\Program Files\SASHome\InstallMisc\utilities\installqual\9.4\sasiqt_console.exe
 
 * Check for log entry c:\users<<siedad>>\AppData\Local\SAS\SASDeploymentWizard\SDW_YEAR_<datetime>.log reporting that the response file is invalid.  [MODIFY the ResponseFile](#installation) to point to an accurate location of SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt
 
-* Starting the install by doubleclicking on the Start.exe file will launch the Install Dialogs, but decisions will need to be made at each step.
+* If any installation problems are encountered, then the deployment history is located in  C:\Users\<<SEIDad>>\AppData\Local\SAS\SASDeploymentWizard contents should be zipped and submitted to the CDWHelpDesk.
 
-* SAS provides a utility to check the validity of an installation, which can be found C:\Program Files\SASHome\InstallMisc\utilities\installqual\9.4\sasiqt_console.exe
+* The install decisions will be recorded in a dated "ResponseRecord*". Compare that ResponseRecord to a ResponseFile and look for deviations. In this example, the user selected options ( shown in RED) in the dialog boxes during setup that did not belong on a workstation. SAS would not complete the post processing. 
+
+![Comparison of ResponsRecord and ResponseFile-Extended-EG64.txt" ](images/responsedeviations.png)
+
+
