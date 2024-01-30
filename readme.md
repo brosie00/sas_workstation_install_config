@@ -4,6 +4,8 @@
 - [Use of this Document and Git Repo](#use-of-this-document-and-git-repo)
 - [Remove Old SAS Client Install](#remove-old-sas-client-install)
 - [Installation](#installation)
+- [-quiet Option](#-quiet-option)
+- [-wait Option](#-wait-option)
 - [Common Installation Issues](#common-installation-issues)
 
 What the project does
@@ -73,15 +75,18 @@ Three locations need to be declared when runnning the script:
   
    Third - The full path to the license file (by default, within the SAS Depot's sid_file directory).  The responsefile found in Step 2, should be modified to include the path to SAS94_9CTQ6M_70198339_Win_X64_Wrkstn.txt.  
 
-
-![Example of a SAS Installation File](images/SASInstallationFile.png)
-
-The setup command will require a full path to a responsefile.  We will choose among two: 
+# -quiet Option
+```    
+    "C:\Users\<seid>\Desktop\sas_software_depot\setup.exe"  -quiet -responsefile   "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Extended-EG64.txt" 
 ```
-- ResponseFile-Basic-EG64.txt
-- ResponseFile-Extended-EG64.txt
+
+# -wait Option
+Windows users also have the ‐wait option available for their use. The -wait option forces the setup.exe process to remain in the task list until the SAS Deployment Wizard completes, which is important with any provisioning software such as Microsoft's SCCM or IBM's Tivoli. The following is an example using the ‐wait option:
 
 ```
+setup.exe ‐wait ‐quiet ‐responsefile "C:\sdwresponse.properties"
+```
+
 The command can either be installed with the user dialogs or without (quiet). The *INSTALLER SHOULD NOT* change the dialog boxes as they are presented during the Install. All decisions have already been written into the responsefile. From a PowerShell prompt, start setup.exe and use the RESPONSEFILE switch ( capitilization is unneccesary) 
 ```
 $ResponseFile = "C:\Users\<seid>\Documents\sas_workstation_install_config\ResponseFiles\ResponseFile-Basic-EG64.txt"  
