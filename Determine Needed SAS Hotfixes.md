@@ -2,9 +2,9 @@
 SAS releases hotfixes to address security needs.  Unlike Windows or Microsoft Office, there is no monolithic installer or updater. Since each install might be completely different, SAS requires an inventory of the existing installation and then compares that inventory to a list of available hotfixes.
 
 # Overview 
-- Inventory the SAS Installation
-- Export the inventory to a non-IRS workstation with direct Internet access
-- Use a sas tool to process the inventory and automate the list of needed hotfixes
+- Inventory the SAS Installation and produce DeploymentRegistry.txt
+- Export the DeploymentRegistry.txt file to a non-IRS workstation with direct Internet access
+- Use a sas tool ( SASHFADD ) to process the inventory and produce a list of needed hotfixes
 - Use a script to download the hotfixes
 - Move the hotfixes to an IRS workstation
 - Install hotfixes
@@ -38,7 +38,7 @@ Which will create 2 DeploymentRegistry* files.
     -a---           1/19/2023  3:54 AM           9214 sas.tools.viewregistry.jar
 
 ```
-# Non-IRS Machine 
+# Non-IRS Machine
 
 1. Download the current version of the SASHFADDwn.exe from the SAS Website file to a machine with Internet Access. https://tshf.sas.com/techsup/download/hotfix/HF2/util01/SASHotFixDLM/tool/SASHFADDwn.exe
 
