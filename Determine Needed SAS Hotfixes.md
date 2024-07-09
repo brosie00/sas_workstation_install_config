@@ -19,10 +19,7 @@ Complete these steps to use SASHFADD in Windows environments:
 From a cmd prompt ( !NOT PowerShell, due to parsing issues) and as administrator,
 ```
     cd "C:\Program Files\SASHome\deploymntreg"
-    java -jar "sas.tools.viewregistry.jar"
-*or*
-C:\Program Files\SASHome\SASPrivateJavaRuntimeEnvironment\9.4\jre\bin\java.exe -jar "C:\Program Files\SASHome\deploymntreg\sas.tools.viewregistry.jar"
-
+    "C:\Program Files\SASHome\SASPrivateJavaRuntimeEnvironment\9.4\jre\bin\java.exe" -jar "C:\Program Files\SASHome\deploymntreg\sas.tools.viewregistry.jar"
 ```
 Which will create 2 DeploymentRegistry* files.
 
