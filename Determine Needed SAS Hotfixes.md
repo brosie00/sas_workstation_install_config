@@ -46,7 +46,7 @@ Which will create 2 DeploymentRegistry* files.
 
 3. As an Administrator, Copy the generated DeploymentRegistry.txt to "C:\Program Files\SAS\SASHFADD"
    ```
-   Copy-Item "C:\Program Files\SASHome\deploymntreg\DeploymentRegistry.txt" "C:\Program Files\SAS\SASHFADD"
+   Copy-Item "C:\Users\Work\Desktop\DeploymentRegistry.txt" "C:\Program Files\SAS\SASHFADD"
    ```
 
 4. As an Administrator, Either, Double-click the SASHFADD.exe file, follow the on-screen instructions, and create three folders. One log directory, one location for downloaded hotfixes, one generated powershell .  
