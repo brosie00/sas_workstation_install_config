@@ -8,5 +8,7 @@ SAS releases hotfixes to address security needs.  Unlike Windows or Microsoft Of
 - Use a script to download the hotfixes
 - Move the hotfixes to an IRS workstation
 - Install hotfixes
-- 
+-
+
+![After Starting Setup.exe within the Depot] (.\images\First_Window.png)
 
