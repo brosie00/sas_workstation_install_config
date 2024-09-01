@@ -10,5 +10,5 @@ SAS releases hotfixes to address security needs.  Unlike Windows or Microsoft Of
 - Install hotfixes
 -
 
-![After Starting Setup.exe within the Depot] (.\images\First_Window.png)
+![After Starting Setup.exe within the Depot](./images/First_Window.png)
 
