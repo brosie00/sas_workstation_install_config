@@ -53,7 +53,7 @@ Remove-Item -Recurse -Force -Path 'C:\Program Files*\SASHome'
 Remove-Item -Recurse -Force -Path 'HKLM:\SOFTWARE\SAS Institute Inc.\'
 Remove-Item -Recurse -Force -Path 'HKLM:\SOFTWARE\WOW6432Node\SAS Institute Inc.'
 
-reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f
+# reg delete "HKLM\SOFTWARE\SAS Institute Inc." /f
 ```
 
 
@@ -97,6 +97,11 @@ C:\sas_software_depot\setup.exe -RESPONSEFILE  "C:\Users\<seid>\Documents\sas_wo
 
 ```
 Start-Process -filepath "c:\sas_software_depot\setup.exe" -ArgumentList '-RESPONSEFILE $ResponseFile'
+
+$ResponseFile = "c:\Users\brett\OneDrive\Desktop\Installation\ResponseRecord_2024-09-01-15.46.44_BASE.log"
+
+"C:\Users\brett\Desktop\SAS_Depot\setup.exe" -RESPONSEFILE "c:\Users\brett\OneDrive\Desktop\Installation\ResponseRecord_2024-09-01-15.46.44_BASE.log"
+
 
 # Common Installation Issues
 
